@@ -6,6 +6,15 @@ Pkg.instantiate()
 repo_name = string(split(ARGS[1], ".")[1])
 bmarkname = lowercase(repo_name)
 
+# Required Packages for benchmarks.jl
+using DelimitedFiles, LinearAlgebra, Printf, SparseArrays
+using BenchmarkTools, DataFrames, Dates, JLD2, Plots
+#JSO packages
+using CUTEst,
+  NLPModels, NLPModelsKnitro, NLPModelsIpopt, BenchmarkProfiles, SolverBenchmark, SolverCore
+#This package
+using DCISolver
+
 # if we are running these benchmarks from the git repository
 # we want to develop the package instead of using the release
 if isdir(joinpath(bmark_dir, "..", ".git"))
@@ -17,7 +26,6 @@ using GitHub
 using JLD2
 using JSON
 using PkgBenchmark
-using Plots
 
 using SolverBenchmark
 
