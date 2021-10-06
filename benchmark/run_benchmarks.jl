@@ -17,7 +17,6 @@ using GitHub
 using JLD2
 using JSON
 using PkgBenchmark
-using Plots
 
 using SolverBenchmark
 
