@@ -1,11 +1,3 @@
-using DelimitedFiles, LinearAlgebra, Printf, SparseArrays
-using BenchmarkTools, DataFrames, Dates, JLD2, Plots
-#JSO packages
-using CUTEst,
-  NLPModels, NLPModelsKnitro, NLPModelsIpopt, BenchmarkProfiles, SolverBenchmark, SolverCore
-#This package
-using DCISolver
-
 function runcutest(cutest_problems, solvers; today::String = string(today()))
   list = ""
   for solver in keys(solvers)
