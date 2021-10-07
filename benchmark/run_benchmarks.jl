@@ -8,7 +8,7 @@ bmarkname = lowercase(repo_name)
 
 # Required Packages for benchmarks.jl
 using DelimitedFiles, LinearAlgebra, Printf, SparseArrays
-using BenchmarkTools, DataFrames, Dates, JLD2, Plots
+using BenchmarkTools, DataFrames, Dates, JLD2
 #JSO packages
 using CUTEst,
   NLPModels, NLPModelsKnitro, NLPModelsIpopt, BenchmarkProfiles, SolverBenchmark, SolverCore
