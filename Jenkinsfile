@@ -1,4 +1,5 @@
 def bmarkFile = 'run_benchmarks.jl'
+def prNumber = BRANCH_NAME.tokenize("PR-")[0]
 pipeline {
   agent any
   environment {
@@ -49,7 +50,7 @@ pipeline {
 
      causeString: 'Triggered on $comment',
 
-     token: "DCISolver",
+     token: "DCISolver_TEST",
 
      printContributedVariables: true,
      printPostContent: true,
@@ -57,7 +58,7 @@ pipeline {
      silentResponse: false,
 
      regexpFilterText: '$comment $pullrequest',
-     regexpFilterExpression: '@JSOBot runbenchmarks 7'
+     regexpFilterExpression: '@JSOBot runbenchmarks ' + prNumber
     )
   }
   stages {
