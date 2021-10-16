@@ -1,3 +1,9 @@
+using BenchmarkTools, DataFrames, Dates, DelimitedFiles, JLD2
+#JSO packages
+using CUTEst, NLPModels, NLPModelsKnitro, NLPModelsIpopt, SolverBenchmark, SolverCore
+#This package
+using DCISolver
+
 function runcutest(cutest_problems, solvers; today::String = string(today()))
   list = ""
   for solver in keys(solvers)
