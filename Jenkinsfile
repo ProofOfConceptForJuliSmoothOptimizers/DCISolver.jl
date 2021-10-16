@@ -56,8 +56,8 @@ pipeline {
 
      silentResponse: false,
 
-     regexpFilterText: '$comment',
-     regexpFilterExpression: '@JSOBot runbenchmarks'
+     regexpFilterText: '$comment $pullrequest',
+     regexpFilterExpression: '@JSOBot runbenchmarks 7'
     )
   }
   stages {
